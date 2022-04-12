@@ -7,6 +7,7 @@ public class CountExample {
 	public static void main(String[] args) {
 		boolean run = true;
 		int balance = 0;
+		int money = 0;
 		Scanner scn = new Scanner(System.in);
 		
 		while(run) {
@@ -24,13 +25,13 @@ public class CountExample {
 				break;
 			case 2:
 				System.out.print("출금액 >");
-				if (balance >= scn.nextInt()) {
-					balance -= scn.nextInt();
-				} else if (balance - scn.nextInt == 0) {
-					break;
-				} else {	
-					System.out.print("잔액이 부족합니다");					
-				}break;
+				money = scn.nextInt();
+				if (balance >= money) {
+					balance -= money;
+				} else {
+					System.out.print("잔액이 부족합니다");
+				}
+				break;
 			case 3:
 				System.out.print("현재 잔고 : " + balance);				
 				break;
