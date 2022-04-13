@@ -7,9 +7,9 @@ public class ArrayExample2 {
 		int num = 1; 
 		for(int i = 0; i < 5; i++) {
 			for(int j = 0; j < 5; j++) {
-				intAry[i][j] = num ++; 
+				intAry[j][i] = num ++; 
 				System.out.printf("%3s",intAry[i][j]);
-				if (intAry[i][j] % 5 == 0) {
+				if (intAry[j][i] % 5 == 0) {
 					System.out.println();
 				}
 			}
