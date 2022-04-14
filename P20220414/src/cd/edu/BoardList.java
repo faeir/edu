@@ -59,12 +59,23 @@ public class BoardList {
 				int currentCnt = boards[i].getSearchCnt();
 				boards[i].setSearchCnt(currentCnt +  1);
 				return boards[i];
-				
+								
 			}
 		}
 		return null;
 	}
 	
+	public Board[] searchWriter (String bWriter) {
+		for(int i=0; i<boards.length; i++) {
+			if(boards[i].getWriter().equals(bWriter)) {
+				int currentCnt = boards[i].getSearchCnt();
+				boards[i].setSearchCnt(currentCnt +  1);
+				return boards;
+			}
+		}
+		return null;
+	}
+				
 	// 게시글목록
 	public Board[] boardList() {
 		return boards;

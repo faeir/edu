@@ -76,6 +76,12 @@ public class Board {
 
 	}
 	
+	public void getWriterInfo() {
+		String info = "작성자  게시글번호  제목 			내용			조회수\n" +//
+				      "===============================================\n";
+		System.out.printf(info, this.writer, this.boardNo, this.title, this.content, this.searchCnt);
+	}
+		
 	//메소드
 
 }

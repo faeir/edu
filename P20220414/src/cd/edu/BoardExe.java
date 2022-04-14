@@ -10,8 +10,8 @@ public class BoardExe {
 		boardList.init(5);
 		
 		while (true) {
-			
-			System.out.println("1.추가 | 2.수정 | 3.목록 | 4.삭제 | 5.한 건 조회 | 9.종료");
+			//6번 작성자 조회
+			System.out.println("1.추가 | 2.수정 | 3.목록 | 4.삭제 | 5.한 건 조회 | 6.작성자 조회 | 9.종료");
 			System.out.print("선택> ");
 			int menu = scn.nextInt();
 			scn.nextLine();
@@ -82,7 +82,17 @@ public class BoardExe {
 				} else {
 					getBoard.getDetailInfo();
 				}
-			} else if (menu == 9) {
+			} else if (menu == 6) {
+				System.out.println("작성자의 번호 >");
+				String bWriter = scn.next();
+				Board[] getBoard = boardList.searchWriter(bWriter);
+				if (getBoard == null) {
+					System.out.println("조회 결과가 없습니다.");
+				} else {
+					getBoard.length.getWriterInfo;
+				}				
+			} 
+			else if (menu == 9) {
 				System.out.println("프로그램을 종료합니다");
 				break;				
 			} else {
