@@ -1,5 +1,6 @@
 package cd.edu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BoardExe {
@@ -13,7 +14,12 @@ public class BoardExe {
 			//6번 작성자 조회
 			System.out.println("1.추가 | 2.수정 | 3.목록 | 4.삭제 | 5.한 건 조회 | 6.작성자 조회 | 9.종료");
 			System.out.print("선택> ");
-			int menu = scn.nextInt();
+			int menu = -1;
+			try {
+				menu = scn.nextInt(); //입력한 숫자값을 반환
+			} catch(InputMismatchException e) {
+				System.out.println("잘못된 처리 실행");
+			}
 			scn.nextLine();
 			
 			if (menu == 1) {
@@ -82,16 +88,19 @@ public class BoardExe {
 				} else {
 					getBoard.getDetailInfo();
 				}
-			} else if (menu == 6) {
-				System.out.println("작성자의 번호 >");
-				String bWriter = scn.next();
-				Board[] getBoard = boardList.searchWriter(bWriter);
-				if (getBoard == null) {
-					System.out.println("조회 결과가 없습니다.");
-				} else {
-					getBoard.length.getWriterInfo;
-				}				
-			} 
+			} else if (menu == 6) { // 작성자
+				System.out.println("작성자의 이름 >");
+				String sWriter = scn.next();
+				Board[] writerList = boardList.searchWriter(sWriter);
+				// writerList 내용 출력
+				System.out.println("게시글번호  제목         내용           사용자  조회수");
+				System.out.println("================================================");
+				for (Board board : writerList) {
+					if (board != null) {
+						board.getInfo();
+					}				
+				}
+			}
 			else if (menu == 9) {
 				System.out.println("프로그램을 종료합니다");
 				break;				
@@ -100,5 +109,5 @@ public class BoardExe {
 			}				
 		}
 		System.out.println("프로그램 종료");
-	}		
+	}
 }

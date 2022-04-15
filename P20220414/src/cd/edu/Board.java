@@ -75,12 +75,15 @@ public class Board {
 				this.boardNo, this.writer, this.title, this.searchCnt, this.content);
 
 	}
+
+	@Override
+	public String toString() {
+		return "Board [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", writer=" + writer
+				+ ", searchCnt=" + searchCnt + "]";
+	} // 부모클래스 toString => 자식클래스 재정의, (부모 클래스가 가진 값을 자식 클래스가 재정의
+	//모든 클래스는 기본적으로 object 클래스에 상속을 받는다
 	
-	public void getWriterInfo() {
-		String info = "작성자  게시글번호  제목 			내용			조회수\n" +//
-				      "===============================================\n";
-		System.out.printf(info, this.writer, this.boardNo, this.title, this.content, this.searchCnt);
-	}
+	
 		
 	//메소드
 
