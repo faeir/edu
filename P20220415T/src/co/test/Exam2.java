@@ -8,7 +8,6 @@ package co.test;
 // 결과 - >2의 배수의 합 : 26 3의 배수의 합 : 27
 public class Exam2 {
 	public static void main(String[] args) {
-		int random = (int)(Math.random()*10)+1;
 		int sum2 = 0;
 		int sum3 = 0;
 		for(int i = 0; i < 10; i++) {

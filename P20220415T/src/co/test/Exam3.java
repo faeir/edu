@@ -17,7 +17,7 @@ public class Exam3 {
 		}
 		double avg = sum/10.0;
 		System.out.println("무작위 수의 평균 값 :"+ avg);
-		for(int j = 0; j < 10; j++) {
+		for(int j = 0; j < avgAry.length; j++) {
 			int random2 = (int)(Math.random()*10)+1;
 			if(random2 > avg) {
 				avgAry[j] = random2;
