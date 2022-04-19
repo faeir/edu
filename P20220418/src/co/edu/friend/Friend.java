@@ -8,7 +8,7 @@ public class Friend {
 	private String phone;
 	
 	//생성자
-	protected Friend() {
+	public Friend() {
 		
 	}
 	public Friend(String name, String phone) {

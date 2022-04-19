@@ -18,18 +18,28 @@ public class game {
 				}
 			}
 		}
-		for (int i = 0; i < 5; i++) {
-			System.out.println("칸을 선택해 주세요 >");
+		int[] gAry2 = new int[5];
+		System.out.println("칸을 선택해 주세요 >");
+		while (true) {
 			int choise = scn.nextInt();
-
-			for (int j = 0; j < 5; j++) {
-				if (j == choise - 1) {
+			if (gAry[choise - 1] == 5) {
+				for (int i = 0; i < gAry.length; i++) {
 					System.out.print("[" + gAry[i] + "]");
-				} else {
-					System.out.print("[*]");
+				}
+				break;
+			} else {
+				for (int j = 0; j < gAry2.length; j++) {
+					if (j == choise - 1) {
+						gAry2[j] = gAry[j];
+						System.out.print("[" + gAry2[j] + "]");
+					} else if (gAry2[j] != 0) {
+						System.out.print("[" + gAry2[j] + "]");
+					} else {
+						System.out.print("[*]");
+					}
+
 				}
 			}
 		}
-
 	}
 }
