@@ -6,6 +6,7 @@ package co.edu.friend;
 public class Friend {
 	private String name;
 	private String phone;
+	private Gender gender; // 남녀구분 enum에서 지정한 타입 MEN, WOMEN만 입력가능
 	
 	//생성자
 	public Friend() {
@@ -15,8 +16,14 @@ public class Friend {
 		super();
 		this.name = name;
 		this.phone = phone;
-	}
+	}	
 	
+	public Friend(String name, String phone, Gender gender) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.gender = gender;
+	}
 	//메소드
 	public String getName() {
 		return name;
@@ -32,12 +39,19 @@ public class Friend {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
+	}		
 
+	public Gender getGender() {
+		return gender;
+	}
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
 	@Override
 	public String toString() {
-		return "Friend [name = " + name + ", phone = " + phone + "]";
+		return "Friend [name = " + name + ", phone = " + phone + ", Gender = " + gender + "]";
 	}
+	
 
 	
 }
