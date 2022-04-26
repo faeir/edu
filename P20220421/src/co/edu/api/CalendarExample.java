@@ -12,12 +12,12 @@ public class CalendarExample {
 
 	public static void main(String[] args) {
 		
-		int year = 2020;
-		int month = 5;		
+//		int year = 2022;
+//		int month = 5;		
 
 		Calendar today = Calendar.getInstance();
 		
-		today.set(year, month -1 , 4);		
+//		today.set(year, month-1, 22);		
 		
 		System.out.println("년도 : " + today.get(Calendar.YEAR));
 		System.out.println("월 : " + today.get(Calendar.MONTH));
@@ -27,16 +27,16 @@ public class CalendarExample {
 		
 		////////////////////////////////////////////////////////
 		
-		Date todate = new Date();
-		todate = new Date("2021/05/05");
-		todate.setYear(2022); // 1970년을 기준으로 증가됨 (1900 + 2022 = 3992)
-		System.out.println(todate.toString());
-		
-		LocalDate ldate = LocalDate.of(2022, 10, 10);
-		System.out.println(ldate.toString());
-		
-		LocalTime ltime = LocalTime.of(10, 10, 10);
-		System.out.println(ltime.toString());
+//		Date todate = new Date();
+//		todate = new Date("2021/05/05");
+//		todate.setYear(2022); // 1970년을 기준으로 증가됨 (1900 + 2022 = 3992)
+//		System.out.println(todate.toString());
+//		
+//		LocalDate ldate = LocalDate.of(2022, 10, 10);
+//		System.out.println(ldate.toString());
+//		
+//		LocalTime ltime = LocalTime.of(10, 10, 10);
+//		System.out.println(ltime.toString());
 		
 		
 //		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -45,10 +45,10 @@ public class CalendarExample {
 //		Date now = new Date("2022-05-03");
 //		System.out.println(sdf.format(now));
 //		
-		LocalDateTime ldt = LocalDateTime.now();
-		ldt = LocalDateTime.of(2022, 10, 5, 10, 20, 30);
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
-		System.out.println(ldt.format(dtf));
+//		LocalDateTime ldt = LocalDateTime.now();
+//		ldt = LocalDateTime.of(2022, 10, 5, 10, 20, 30);
+//		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+//		System.out.println(ldt.format(dtf));
 	}
 
 }
