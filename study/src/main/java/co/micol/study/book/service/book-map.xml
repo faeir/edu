@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.study.book.service.BookMapper">
+	
+	<select id="BookSelectList" resultType="co.micol.study.book.vo.BookVO">
+		SELECT * FROM BOOK ORDER BY BOOKNAME DESC
+	</select>
+	
+	<select id="BookSearchList" parameterType="String"
+		resultType="co.micol.study.book.vo.BookVO">
+		SELECT * FROM BOOK 
+		where 
+		<if test="key == 1"> 1 = 1 </if>
+		<if test="key == 2"> BOOKNAME LIKE '%' || #{VAL} || '%' </if>
+		<if test="key == 3"> READ LIKE '%' || #{VAL} || '%' </if>
+	</select>
+	
+	<select id="bookSelect" parameterType="co.micol.study.book.vo.BookVO"
+				resultType="co.micol.study.book.vo.BookVO">
+		SELECT * FROM BOOK WHERE BOOKNAME = #{BOOKNAME}	
+	</select>
+	
+	<insert id="bookInsert" parameterType="co.micol.study.book.vo.BookVO">
+		INSERT INTO BOOK
+		VALUES(#{BOOKNAME},#{WRITER},#{READ},#{RENTAL})
+	</insert>
+	
+	<update id="bookUpdate" parameterType="co.micol.study.book.vo.BookVO">
+		update book
+		<set>
+			<if test="writer != null">WRITER = #{writer},</if>
+			<if test="read != null">READ = #{read},</if>
+			<if test="rental != null">RENTAL = #{rental},</if>			
+		</set>
+		WHERE BOOKNAME = #{BOOKNAME}
+	</update>
+	
+	<delete id="bookDelete" parameterType="co.micol.study.book.vo.BookVO">
+		DELETE FROM BOOK WHERE BOOKNAME = #{BOOKNAME}
+	</delete>
+
+</mapper>
